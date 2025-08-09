@@ -7,6 +7,7 @@ vcpkg_from_github(
     SHA512 d4a560e225d0110133f44ed57cf5394c1710530c5fec395d02baafaac9ea2186dd543047ae27fd7542894b8744070760516ae611602105b1b40605abbf84e684
     HEAD_REF master
     PATCHES
+        cmake-fix-to-restrict-SystemConfiguration-to-macOS.patch
         dependencies.patch
         pkgconfig-curl-config.patch
 )
