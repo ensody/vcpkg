@@ -27,8 +27,57 @@ vcpkg_from_github(
 )
 
 vcpkg_list(SET CONFIGURE_OPTIONS
-    enable-static-engine
-    enable-capieng
+    no-static-engine
+    no-dynamic-engine
+    no-engine
+    no-capieng
+    no-async
+    no-legacy
+    no-module
+    no-afalgeng
+    no-padlockeng
+    no-thread-pool
+    no-weak-ssl-ciphers
+
+    no-comp
+    no-zlib
+
+    no-uplink
+    no-srp
+    no-srtp
+    no-ts
+
+    no-ssl
+    no-ssl2
+    no-ssl3
+    no-ssl3-method
+    no-tls1
+    no-tls1-method
+    no-tls1_1-method
+    no-dtls1
+    no-dtls1-method
+    no-dtls1_2
+    no-dtls1_2-method
+    no-ssl-trace
+
+    no-quic
+
+    no-sock
+    no-nextprotoneg
+    no-cms
+    no-cmp
+    no-ct
+    no-dgram
+    no-dso
+
+    no-md2
+    no-md4
+    no-mdc2
+    no-rc2
+    no-rc4
+
+    no-ui-console
+    no-filenames
     no-tests
     no-docs
 )
