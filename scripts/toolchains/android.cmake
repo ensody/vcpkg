@@ -59,8 +59,10 @@ if(NOT _VCPKG_ANDROID_TOOLCHAIN)
         VCPKG_LINKER_FLAGS VCPKG_LINKER_FLAGS_RELEASE VCPKG_LINKER_FLAGS_DEBUG
     )
 
-    string(APPEND CMAKE_C_FLAGS " -fPIC ${VCPKG_C_FLAGS} ")
-    string(APPEND CMAKE_CXX_FLAGS " -fPIC ${VCPKG_CXX_FLAGS} ")
+    # The Kotlin Native compiler builds with the really old NDK 20 and without -mno-outline-atomics you'll get lots of
+    # unresolved symbols
+    string(APPEND CMAKE_C_FLAGS " -fPIC -mno-outline-atomics ${VCPKG_C_FLAGS} ")
+    string(APPEND CMAKE_CXX_FLAGS " -fPIC -mno-outline-atomics ${VCPKG_CXX_FLAGS} ")
     string(APPEND CMAKE_C_FLAGS_DEBUG " ${VCPKG_C_FLAGS_DEBUG} ")
     string(APPEND CMAKE_CXX_FLAGS_DEBUG " ${VCPKG_CXX_FLAGS_DEBUG} ")
     string(APPEND CMAKE_C_FLAGS_RELEASE " ${VCPKG_C_FLAGS_RELEASE} ")
